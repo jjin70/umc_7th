@@ -1,4 +1,4 @@
-package umc.spring.domain.config;
+package umc.spring.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
