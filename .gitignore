@@ -43,3 +43,6 @@ src/main/.DS_Store
 
 ### application.yml ###
 application.yml
+
+### QueryDSL ###
+src/main/generated/
