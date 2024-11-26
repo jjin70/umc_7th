@@ -1,5 +1,8 @@
 package umc.spring.web.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +15,9 @@ import umc.spring.domain.Store;
 @AllArgsConstructor
 public class ReviewRequestDTO {
 
+    @NotNull(message = "널이어서는 안 됩니다.")
     private Float score;
+    @Size(min = 5, max = 30, message = "5자 이상, 30자 이하이어야 합니다.")
     private String body;
 
     public Review toEntity(Member member, Store store) {

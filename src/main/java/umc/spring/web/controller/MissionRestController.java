@@ -17,9 +17,9 @@ public class MissionRestController {
 
     private final MissionCommandService missionCommandService;
 
-    @PostMapping("/{storeId}")
-    public ApiResponse<MissionResponseDTO> createrMission(@RequestParam(name = "storeId")  Long storeId, @RequestBody @Valid MissionRequestDTO request){
-        MissionResponseDTO response = missionCommandService.createMission(storeId, request);
+    @PostMapping("/")
+    public ApiResponse<MissionResponseDTO> createMission(@RequestBody @Valid MissionRequestDTO request){
+        MissionResponseDTO response = missionCommandService.createMission(request);
         return ApiResponse.onSuccess(response);
     }
 

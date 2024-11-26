@@ -33,8 +33,8 @@ public class MissionCommandServiceImpl implements MissionCommandService {
     private final MemberMissionRepository memberMissionRepository;
 
     @Override
-    public MissionResponseDTO createMission(Long storeId, MissionRequestDTO request) {
-        Store store = storeRepository.findById(storeId)
+    public MissionResponseDTO createMission(MissionRequestDTO request) {
+        Store store = storeRepository.findById(request.getStoreId())
                 .orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND));
 
         Mission mission = request.toEntity(store);
